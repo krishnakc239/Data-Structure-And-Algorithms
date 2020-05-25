@@ -1,14 +1,17 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
-public class CombinationSums {
+public class
+
+CombinationSums {
 
     public static void main(String[] args) {
-        int[] arr = {1,2,3,5,7,9};
-        int target = 9;
-        System.out.println(findCombinationSum(arr,target));
+        int[] arr = {10, 20, 40, 50, 30};
+        int target = 60;
+//        findSubarray(arr, target);
+//        System.out.println(" count is : "+ countSubArraysProudctLessThanK(arr,target));
     }
-
     static List<List<Integer>> findCombinationSum(int[] candidates, int target){
         List<List<Integer>> result = new ArrayList<>();
         List<Integer> list = new ArrayList<>();
@@ -25,10 +28,11 @@ public class CombinationSums {
             result.add(new ArrayList<>(list));
             return;
         }
-        for(int i=0;i<candidates.length;i++){
+        for(int i=0;i<candidates.length-1;i++){
             list.add(candidates[i]);
-            helper(candidates,i,target,sum+candidates[i],list,result);
+            helper(candidates,i,target,sum+candidates[i+1],list,result);
             list.remove(list.size()-1);
         }
     }
 }
+

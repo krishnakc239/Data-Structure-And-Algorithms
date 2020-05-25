@@ -2,7 +2,7 @@ public class LongestCommonSubstring {
 
 
     public static void main(String[] args) {
-
+        System.out.println(longestCommonSubstring("abcde","bcaf"));
     }
 
     public static String longestCommonSubstring(String s1, String s2){
